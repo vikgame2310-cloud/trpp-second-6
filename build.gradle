@@ -24,6 +24,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.18'
     compileOnly 'org.projectlombok:lombok:1.18.18'
 
+    implementation 'com.opencsv:opencsv:5.9'
+
     implementation("io.micronaut:micronaut-runtime")
     implementation("io.micronaut:micronaut-validation")
     implementation("io.micronaut:micronaut-http-client")
@@ -35,7 +37,7 @@ dependencies {
 
 
 application {
-    mainClass.set("ru.mirea.Application")
+    mainClass.set("ru.mirea.trppsecond6.Application")
 }
 
 java {
@@ -59,10 +61,13 @@ compileTestJava {
 
 javadoc {
     options.encoding = 'UTF-8'
+    options.charSet = 'UTF-8'
+    options.docEncoding = 'UTF-8'
+    options.locale = 'en'
 }
 
 shadowJar {
-    archivesBaseName = "${project.name}"
+    archivesBaseName = "${project.name}-Bondarev"
     libsDirName = "${project.name}"
     classifier('')
 }
@@ -79,3 +84,4 @@ checkstyleMain {
 checkstyleTest {
     source ='src/test/java'
 }
+
